@@ -2,7 +2,7 @@ package DAO;
 
 public class DBInfo {
 	/*
-	 * MySQLÀ» ¿¬°áÇÏ±â À§ÇØ ÇÊ¿äÇÑ ±âÃÊÀûÀÎ 4°¡Áö Á¤º¸¸¦ ¹Ì¸® Á¤ÀÇÇØµÎ´Â ÀÚ·á±¸Á¶
+	 * MySQLì„ ì—°ê²°í•˜ê¸° ìœ„í•´ í•„ìš”í•œ ê¸°ì´ˆì ì¸ 4ê°€ì§€ ì •ë³´ë¥¼ ë¯¸ë¦¬ ì •ì˜í•´ë‘ëŠ” ìë£Œêµ¬ì¡°
 	 */
 	private String jdbcDriver ;
 	private String jdbcUrl;
@@ -12,9 +12,9 @@ public class DBInfo {
 	public DBInfo() {
 		jdbcDriver = "com.mysql.cj.jdbc.Driver";
 		jdbcUrl = "jdbc:mysql://localhost:3306/javaDB ?characterEncoding=UTF-8&&serverTimezone=UTC";
-		ID = "root";
-		password = "11111111";
-		//ÆÄ¶ó¹ÌÅÍ ¾øÀÌ »ı¼ºÇßÀ»¶§ ÀÚµ¿À¸·Î ¼³Á¤µÇ´Â Á¤º¸µé --> ÇÊ¿äÇÏ¸é set¸Ş¼Òµå¸¦ ÅëÇØ Á¤º¸ ¼öÁ¤ ÇÊ¼ö
+		ID = "";
+		password = "";
+		//íŒŒë¼ë¯¸í„° ì—†ì´ ìƒì„±í–ˆì„ë•Œ ìë™ìœ¼ë¡œ ì„¤ì •ë˜ëŠ” ì •ë³´ë“¤ --> í•„ìš”í•˜ë©´ setë©”ì†Œë“œë¥¼ í†µí•´ ì •ë³´ ìˆ˜ì • í•„ìˆ˜
 	}
 	
 	 public DBInfo(String iD, String password, String DBname) {
@@ -24,7 +24,7 @@ public class DBInfo {
 	      this.password = password;
 	      jdbcUrl = "jdbc:mysql://localhost:3306/" + DBname + "?characterEncoding=UTF-8&&serverTimezone=UTC";
 	      /*
-	       * DBÀÇ Æ÷Æ®¹øÈ£´Â 3306ÀÌ°í ´Ù¸¥°Í¸¸ ¸ğµÎ ´Ù¸¦¶§ »ç¿ëÇÏ´Â »ı¼ºÀÚ
+	       * DBì˜ í¬íŠ¸ë²ˆí˜¸ëŠ” 3306ì´ê³  ë‹¤ë¥¸ê²ƒë§Œ ëª¨ë‘ ë‹¤ë¥¼ë•Œ ì‚¬ìš©í•˜ëŠ” ìƒì„±ì
 	       */
 	 }
 	   
@@ -34,7 +34,7 @@ public class DBInfo {
 	      this.ID = iD;
 	      this.password = password;
 	      jdbcUrl = "jdbc:mysql://localhost:" + PortNumber + "/" + DBname + "?characterEncoding=UTF-8&&serverTimezone=UTC";
-	      //DBÆ÷Æ®¹øÈ£±îÁö »ç¿ëÀÚÀÇ ÀÓÀÇ·Î º¯°æÇßÀ»¶§¸¦ ´ëºñÇÑ »ı¼ºÀÚ
+	      //DBí¬íŠ¸ë²ˆí˜¸ê¹Œì§€ ì‚¬ìš©ìì˜ ì„ì˜ë¡œ ë³€ê²½í–ˆì„ë•Œë¥¼ ëŒ€ë¹„í•œ ìƒì„±ì
 	   }
 
 
@@ -70,7 +70,7 @@ public class DBInfo {
 		this.password = password;
 	}
 	/*
-	 * DB¿¬°á Á¤º¸¿¡ ´ëÇÑ get/set ¸Ş¼Òµåµé
+	 * DBì—°ê²° ì •ë³´ì— ëŒ€í•œ get/set ë©”ì†Œë“œë“¤
 	 */
 
 }
