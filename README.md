@@ -2,6 +2,8 @@
 This project made by on the winter semester course of the java programming use the network programming and database programming.
 That using MVC design pattern to improve our OOP technique. and prevent to make object twice, we choose singleton pattern that you can check the AppManager.java file 
 
+You can check the demo video on the YouTube :
+https://youtu.be/KqcYjUtSUwU
 
 table book
 create table book(bookID char(100) not null,bname char(100) not null,author char(100),publish char(100), primary key(bookID));
