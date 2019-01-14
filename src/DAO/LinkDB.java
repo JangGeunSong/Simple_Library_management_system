@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 
 public class LinkDB {
 	/*
-	 * DB¿¡ ¿¬°áÇÏ°í DBÁ¢±Ù½Ã »ç¿ëÇÏ´Â pstmt conn rsµîÀÇ º¯¼ö¸¦ °¡Áö°í ÀÖ´Â Å¬·¡½º 
+	 * DBì— ì—°ê²°í•˜ê³  DBì ‘ê·¼ì‹œ ì‚¬ìš©í•˜ëŠ” pstmt conn rsë“±ì˜ ë³€ìˆ˜ë¥¼ ê°€ì§€ê³  ìˆëŠ” í´ë˜ìŠ¤ 
 	 */
 	public Connection conn;
 	public PreparedStatement pstmt;
@@ -15,13 +15,14 @@ public class LinkDB {
 	private DBInfo user;
 
 	public LinkDB() {
-		user = new DBInfo("root", "thdwkdrms12!@", "jdbc", "8800");
-		//DB¿¬°á½Ã ÇÊ¿äÇÑ Á¤º¸¸¦ LinkDB() »ı¼ºÀÚ¸¦ ÅëÇØ ¹Ù·Î ±¸ÇöÇÑ´Ù. Áï DB¿¡ ¿¬°áÇÏ±â À§ÇØ¼­´Â ¿©±â ºÎºĞÀÇ ¼öÁ¤ÀÌ ÇÊ¼ö
-		//ÀÌ´Ù.
+		user = new DBInfo();
+		//set name ID PW you want to input it
+		//DBì—°ê²°ì‹œ í•„ìš”í•œ ì •ë³´ë¥¼ LinkDB() ìƒì„±ìë¥¼ í†µí•´ ë°”ë¡œ êµ¬í˜„í•œë‹¤. ì¦‰ DBì— ì—°ê²°í•˜ê¸° ìœ„í•´ì„œëŠ” ì—¬ê¸° ë¶€ë¶„ì˜ ìˆ˜ì •ì´ í•„ìˆ˜
+		//ì´ë‹¤.
 	}
 
 	public void connectDB() {
-		//DBÁ¢±ÙÇÏ±â Àü ¿¬°á ¸Ş¼Òµå
+		//DBì ‘ê·¼í•˜ê¸° ì „ ì—°ê²° ë©”ì†Œë“œ
 		try {
 			Class.forName(user.getJdbcDriver()).newInstance();
 			conn = DriverManager.getConnection(user.getJdbcUrl(), user.getID(), user.getPassword());
@@ -33,7 +34,7 @@ public class LinkDB {
 	} //connectDB()
 
     public void closeDB() {
-    	//DB¿¡¼­ÀÇ ¸ğµç ÀÏÀÌ ³¡³ª°í ³­ ÈÄ ¿¬°áÀ» ´İ´Â ¸Ş¼Òµå
+    	//DBì—ì„œì˜ ëª¨ë“  ì¼ì´ ëë‚˜ê³  ë‚œ í›„ ì—°ê²°ì„ ë‹«ëŠ” ë©”ì†Œë“œ
         try {
         	if(pstmt != null) {
         		pstmt.close();
@@ -44,7 +45,7 @@ public class LinkDB {
         	if(conn != null) {
         		conn.close();
         	}
-        	//3°³ÀÇ Á¢±Ù º¯¼ö°¡ nullÀÏ ¼öµµ ÀÖÀ»¶§ ¿¹¿Ü»óÈ²À» ¸·±âÀ§ÇÑ if¹®
+        	//3ê°œì˜ ì ‘ê·¼ ë³€ìˆ˜ê°€ nullì¼ ìˆ˜ë„ ìˆì„ë•Œ ì˜ˆì™¸ìƒí™©ì„ ë§‰ê¸°ìœ„í•œ ifë¬¸
         } catch (Exception e) {
             e.printStackTrace();
         }
